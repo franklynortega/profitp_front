@@ -56,7 +56,7 @@ module.exports = configure(function (/* ctx */) {
       vueRouterMode: "hash", // available values: 'hash', 'history'
 
       env: {
-        API_URL: "http://127.0.0.1:8081/cunapro/cunapro_back/public/api/", // FO,
+        //API_URL: "http://127.0.0.1:8081/cunapro/cunapro_back/public/api/", // FO,
         // API_URL: "http:// JO
       },
       // vueRouterBase,

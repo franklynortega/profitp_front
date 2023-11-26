@@ -11,7 +11,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Portal Cunapro </q-toolbar-title>
+        <q-toolbar-title> PGC Profit Manufactura </q-toolbar-title>
 
         <div>Version | 1.0 dev</div>
       </q-toolbar>
@@ -20,8 +20,8 @@
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
       <q-scroll-area
         style="
-          height: calc(100% - 100px);
-          margin-top: 90px;
+          height: calc(100% - 110px);
+          margin-top: 110px;
           /* border-right: 1px solid #ddd; */
         "
       >
@@ -39,14 +39,13 @@
               <q-item-label caption>Salir de la App</q-item-label>
             </q-item-section>
           </q-item>
-
         </q-list>
       </q-scroll-area>
       <div class="absolute-top" style="background-color: whitesmoke">
         <q-img
           class="q-mt-md q-ml-md"
           src="../assets/logo.svg"
-          style="width: 165px; height: 31px"
+          style="width: 180px; height: 60px"
           :ratio="16 / 9"
         >
         </q-img>
@@ -110,22 +109,25 @@ export default defineComponent({
     };
     const leftDrawerOpen = ref(false);
 
-    function logout(){
+    function logout() {
       localStorage.removeItem("cunaproUserData");
       localStorage.removeItem("cunaproClientToken");
       router.push({ path: "/login" });
     }
 
     onMounted(() => {
-      document.getElementById('body').classList.remove('back');
-      if (localStorage.getItem("cunaproUserData") && localStorage.getItem("cunaproClientToken")) {
-        let currentUser = JSON.parse(localStorage.getItem('cunaproUserData'));
+      document.getElementById("body").classList.remove("back");
+      if (
+        localStorage.getItem("cunaproUserData") &&
+        localStorage.getItem("cunaproClientToken")
+      ) {
+        let currentUser = JSON.parse(localStorage.getItem("cunaproUserData"));
         user.name = currentUser.name;
         user.rol = currentUser.email; // mientras no tenemos un rol asociado colocamos el email
-      }else{
+      } else {
         router.push({ path: "/login" });
       }
-    })
+    });
 
     return {
       linksList,
